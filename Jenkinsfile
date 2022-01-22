@@ -5,6 +5,10 @@ pipeline {
     {
        maven "Maven"
     }
+
+	environment {
+	DOCKER_RUN  = 'docker run -p 8003:8080 -d --name my-app rajuyathi/samplewebapp' 
+  	 }
  stages {
       stage('checkout') {
            steps {
@@ -49,7 +53,6 @@ pipeline {
 
 
 	stage('Run Container on Dev Server'){
-	final String dockerRun = "docker run -p 8003:8080 -d --name my-app rajuyathi/samplewebapp"
 	steps {
      	sshagent(['jenkins_docker']) {
        		sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.35.179"
