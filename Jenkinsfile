@@ -32,11 +32,11 @@ pipeline {
         }
 
 	stage('Push Docker Image'){
+	steps {
 	withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerPwd')]) {
         // some blocki
 	 sh "docker login -u rajuyathi  -p ${dockerPwd}"
-
-
+	}
 	}
      }
 	}
