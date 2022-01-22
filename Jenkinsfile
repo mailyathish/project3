@@ -49,7 +49,7 @@ pipeline {
 
 
 	stage('Run Container on Dev Server'){
-	def dockerRun = 'docker run -p 8003:8080 -d --name my-app rajuyathi/samplewebapp'
+	final String dockerRun = 'docker run -p 8003:8080 -d --name my-app rajuyathi/samplewebapp'
 	steps {
      	sshagent(['jenkins_docker']) {
        		sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.35.179"
