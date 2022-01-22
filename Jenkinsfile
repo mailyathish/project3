@@ -33,9 +33,15 @@ pipeline {
 
 	stage('Push Docker Image'){
 	steps {
+	
+	withCredentials([string(credentialsId: 'DockerPWD', variable: 'DockerPass')]) {
+    	// some block
 
+	sh 'docker login -u rajuyathi -p ${DockerPass}'
+
+	}
 	 // some block
-	 sh 'docker push rajuyathi/samplewebapp:latest'
+	// sh 'docker push rajuyathi/samplewebapp:latest'
 
 	}
 
