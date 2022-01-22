@@ -39,10 +39,10 @@ pipeline {
 
 	sh 'docker login -u rajuyathi -p ${DockerPass}'
 
-	}
+	
 	 // some block
-	// sh 'docker push rajuyathi/samplewebapp:latest'
-
+	sh 'docker push rajuyathi/samplewebapp:latest'
+	}
 	}
 
 	}
