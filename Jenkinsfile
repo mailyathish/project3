@@ -35,7 +35,7 @@ pipeline {
           
             steps {
 		withCredentials([string(credentialsId: 'dockerHub', variable: 'dockerHub')]) {
-          sh "docker login -u rajuyathi -p ${Docker_Hub_Pwd}"
+          sh "docker login -u rajuyathi -p ${dockerHub}"
         }
              // withDockerRegistry([ credentialsId: "dockerHub", url: " " ]) {
              //  sh  'docker push rajuyathi/samplewebapp:latest'
