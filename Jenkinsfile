@@ -33,10 +33,13 @@ pipeline {
 
 	stage('Push Docker Image'){
 	steps {
-	withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerPwd')]) {
-        // some blocki
-	 sh "docker login -u rajuyathi  -p ${dockerPwd}"
+
+	withDockerRegistry(credentialsId: 'dockerHub', url: 'https://hub.docker.com/repositories') {
+   	 // some block
+	sh 'docker push rajuyathi/samplewebapp:latest'
+
 	}
+
 	}
      }
 	}
