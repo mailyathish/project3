@@ -34,7 +34,8 @@ pipeline {
 	stage('Push Docker Image'){
 	steps {
 
-	withDockerRegistry(credentialsId: 'dockerHub', url: '') {
+	withDockerRegistry([url: "", credentialsId: "dockerHub"]) 
+	 {
    	 // some block
 	sh 'docker push rajuyathi/samplewebapp:latest'
 
