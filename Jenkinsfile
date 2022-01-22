@@ -36,8 +36,9 @@ pipeline {
 
 	withDockerRegistry([url: "", credentialsId: "dockerHub"]) 
 	 {
-   	 // some block
-	sh 'docker push rajuyathi/samplewebapp:latest'
+   	sh 'echo ${dockerHub}'
+	 // some block
+	//sh 'docker push rajuyathi/samplewebapp:latest'
 
 	}
 
