@@ -34,15 +34,11 @@ pipeline {
 	stage('Push Docker Image'){
 	steps {
 
-	withDockerRegistry([url: "", credentialsId: "dockerHub"]) 
-	 {
-   	sh 'echo ${dockerHub}'
 	 // some block
-	//sh 'docker push rajuyathi/samplewebapp:latest'
+	 sh 'docker push rajuyathi/samplewebapp:latest'
 
 	}
 
 	}
-     }
 	}
     }    
