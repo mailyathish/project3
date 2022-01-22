@@ -7,7 +7,7 @@ pipeline {
     }
 
 	environment {
-	DOCKER_RUN  = 'docker run -p 8003:8080 -d --name my-app rajuyathi/samplewebapp' 
+	DOCKER_RUN  = 'docker run -p 8080:8080 -d --name my-app rajuyathi/samplewebapp' 
   	 }
  stages {
       stage('checkout') {
