@@ -42,7 +42,7 @@ pipeline {
              //  sh  'docker push rajuyathi/samplewebapp:$BUILD_NUMBER' 
         }
                   
-          }
+         
         }
      
       stage('Run Docker container on Jenkins Agent') {
