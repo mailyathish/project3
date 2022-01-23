@@ -55,7 +55,8 @@ pipeline {
 	stage('Run Container on Dev Server'){
 	steps {
      	sshagent(['jenkins_docker']) {
-       		sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.35.179 ${DOCKER_RUN}"
+       		sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.35.179 docker rm -f rajuyathi/samplewebapp || true"
+		sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.35.179 ${DOCKER_RUN}"
      	}
 
 	}
